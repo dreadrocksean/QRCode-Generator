@@ -12,7 +12,8 @@ const AppInput: React.FC<AppInputProps> = ({ qrString, setQrString }) => {
     const trimmedValue: string = e.target.value
       .trim()
       .replace(/https:\/\//g, "");
-    setQrString(`https://${trimmedValue}`);
+    if (trimmedValue) setQrString(`https://${trimmedValue}`);
+    else setQrString("");
   };
 
   return (
@@ -22,7 +23,7 @@ const AppInput: React.FC<AppInputProps> = ({ qrString, setQrString }) => {
         className={styles.formField}
         value={qrString.replace(/https:\/\//g, "")}
         type="text"
-        placeholder="Enter website to generate QR code"
+        placeholder="Enter website to generate code"
         onChange={handleChange}
       />
     </div>

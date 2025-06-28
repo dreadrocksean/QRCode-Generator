@@ -18,12 +18,12 @@
 .formField {
   display: block;
   width: 100%;
-  padding: 8px 16px;
-  line-height: 25px;
-  font-size: 14px;
+  padding: 1rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 0 0;
   -webkit-appearance: none;
   appearance: none;
   color: var(--input-color);
@@ -69,10 +69,12 @@
     margin-bottom: 0;
   }
   & > span {
-    text-align: center;
-    padding: 8px 12px;
-    font-size: 14px;
-    line-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    font-size: 1rem;
+    /* line-height: 100%; */
     /* color: var(--group-color);
     background: var(--group-background); */
     border: 1px solid var(--group-border);

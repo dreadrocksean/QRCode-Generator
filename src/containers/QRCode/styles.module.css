@@ -1,17 +1,4 @@
 :root {
-  --input-color: #99a3ba;
-  --input-border: #cdd9ed;
-  --input-background: #fff;
-  --input-placeholder: #cbd1dc;
-
-  --input-border-focus: #275efe;
-
-  --group-color: var(--input-color);
-  --group-border: var(--input-border);
-  --group-background: #eef4ff;
-
-  --group-color-focus: #fff;
-  --group-border-focus: var(--input-border-focus);
   --group-background-focus: #678efe;
 }
 .root {
@@ -19,7 +6,48 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background: #f5f9ff;
+  background: rgba(255, 255, 255, 0.1);
   border: 1rem solid;
   border-color: var(--group-background-focus);
+  min-height: 18rem;
+  transition: all 0.3s ease;
+}
+.empty {
+  background: transparent;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder {
+  color: #5a75ce;
+  width: 30%;
+  height: 30%;
+  will-change: filter;
+  transition: filter 300ms;
+  /* background: pink; */
+}
+
+.placeholder:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.placeholder.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes placeholder-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .placeholder {
+    animation: placeholder-spin infinite 20s linear;
+  }
 }
