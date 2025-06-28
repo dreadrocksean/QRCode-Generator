@@ -1,0 +1,12 @@
+module.exports = {
+  transform: {
+    "^.+\\.[jt]sx?$": "babel-jest",
+  },
+  testEnvironment: "jsdom", // Recommended for React
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
+  moduleNameMapper: {
+    "\\.module\\.css$": "identity-obj-proxy", // for CSS Modules
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy", // for global styles (optional)
+  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+};
