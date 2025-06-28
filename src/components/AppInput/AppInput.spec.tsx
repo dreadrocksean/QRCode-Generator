@@ -11,7 +11,7 @@ describe("AppInput", () => {
   it("renders input with value without https:// prefix", () => {
     setup("https://test.com");
     const input = screen.getByPlaceholderText(
-      /enter website to generate qr code/i
+      /enter website to generate code/i
     ) as HTMLInputElement;
     expect(input.value).toBe("test.com");
   });
@@ -25,7 +25,7 @@ describe("AppInput", () => {
     const setQrString = jest.fn();
     setup("https://old.com", setQrString);
     const input = screen.getByPlaceholderText(
-      /enter website to generate qr code/i
+      /enter website to generate code/i
     );
     fireEvent.change(input, { target: { value: "newsite.com" } });
     expect(setQrString).toHaveBeenCalledWith("https://newsite.com");
@@ -35,7 +35,7 @@ describe("AppInput", () => {
     const setQrString = jest.fn();
     setup("https://old.com", setQrString);
     const input = screen.getByPlaceholderText(
-      /enter website to generate qr code/i
+      /enter website to generate code/i
     );
     fireEvent.change(input, { target: { value: "  spaced.com  " } });
     expect(setQrString).toHaveBeenCalledWith("https://spaced.com");
@@ -44,7 +44,7 @@ describe("AppInput", () => {
   it("shows empty input if qrString is only https://", () => {
     setup("https://");
     const input = screen.getByPlaceholderText(
-      /enter website to generate qr code/i
+      /enter website to generate code/i
     ) as HTMLInputElement;
     expect(input.value).toBe("");
   });
