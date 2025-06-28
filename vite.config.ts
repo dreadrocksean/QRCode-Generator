@@ -7,6 +7,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    tsconfig: "./tsconfig.app.json", // ✅ Explicitly tell Vitest to use this
+    tsconfig: "./tsconfig.app.json",
   },
 });

@@ -1,8 +1,6 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import * as ReactDOMClient from "react-dom/client";
-import App from "./App";
 
 // Mock createRoot and document.getElementById
 jest.mock("react-dom/client", () => ({

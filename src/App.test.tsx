@@ -4,18 +4,32 @@ import "@testing-library/jest-dom";
 import App from "./App";
 
 // Mock child components
-jest.mock("./containers/QRCode", () => (props: any) => (
-  <div data-testid="qrcode" data-value={props.value} />
-));
+import QRCode from "./containers/QRCode";
+jest.mock(
+  "./containers/QRCode",
+  () => (props: React.ComponentProps<typeof QRCode>) =>
+    <div data-testid="qrcode" data-value={props.value} />
+);
 jest.mock("./containers/Header", () => () => <header data-testid="header" />);
 jest.mock("./containers/Logos", () => () => <div data-testid="logos" />);
-jest.mock("./components/AppInput", () => ({ qrString, setQrString }: any) => (
-  <input
-    data-testid="app-input"
-    value={qrString}
-    onChange={(e) => setQrString(e.target.value)}
-  />
-));
+jest.mock(
+  "./components/AppInput",
+  () =>
+    ({
+      qrString,
+      setQrString,
+    }: {
+      qrString: string;
+      setQrString: (value: string) => void;
+    }) =>
+      (
+        <input
+          data-testid="app-input"
+          value={qrString}
+          onChange={(e) => setQrString(e.target.value)}
+        />
+      )
+);
 jest.mock("./assets/react.svg", () => "logo.svg");
 
 describe("App", () => {
