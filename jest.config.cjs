@@ -6,7 +6,8 @@ module.exports = {
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   moduleNameMapper: {
     "\\.module\\.css$": "identity-obj-proxy", // for CSS Modules
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy", // for global styles (optional)
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy", // for global styles
+    "\\.svg$": "<rootDir>/__mocks__/svgMock.js", // for SVGs
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
 };

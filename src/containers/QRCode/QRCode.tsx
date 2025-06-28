@@ -1,10 +1,12 @@
+import React from "react";
 import type { FC } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import type { QRCodeProps } from "./QRCodeProps";
+import logo from "../../assets/react.svg";
 
 import styles from "./styles.module.css";
 
-const defaultProps: Partial<QRCodeProps> = {
+const defaultProps: QRCodeProps = {
   value: "",
   size: 300,
   level: "L",
@@ -15,7 +17,7 @@ const defaultProps: Partial<QRCodeProps> = {
   minVersion: 1,
   boostLevel: true,
   imageSettings: {
-    src: "",
+    src: logo,
     height: 0,
     width: 0,
     excavate: false,
