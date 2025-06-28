@@ -10,4 +10,10 @@ module.exports = {
     "\\.svg$": "<rootDir>/__mocks__/svgMock.js", // for SVGs
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  // preset: "ts-jest",
+  // globals: {
+  //   "ts-jest": {
+  //     tsconfig: "./tsconfig.app.json", // ✅ or ./tsconfig.test.json if separated
+  //   },
+  // },
 };

@@ -1,3 +1,5 @@
+import React from "react";
+import type { FC } from "react";
 import { useState } from "react";
 
 import QRCode from "./containers/QRCode";
@@ -8,7 +10,7 @@ import logo from "./assets/react.svg";
 
 import "./App.css";
 
-function App() {
+const App: FC = () => {
   const [qrString, setQrString] = useState("");
   const qrCodeImageSettings = {
     src: logo,
@@ -29,6 +31,6 @@ function App() {
       <QRCode value={qrString} imageSettings={qrCodeImageSettings} />
     </>
   );
-}
+};
 
 export default App;
